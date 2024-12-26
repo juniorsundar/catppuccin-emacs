@@ -1,0 +1,54 @@
+From b51b07e1b9c3e841165fdcd4fb32f9b94de7faa2 Mon Sep 17 00:00:00 2001
+From: gs-101 <172639817+gs-101@users.noreply.github.com>
+Date: Tue, 10 Dec 2024 07:58:47 -0300
+Subject: [PATCH 1/2] feat: style font-lock-property-name-face
+
+---
+ catppuccin-theme.el | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/catppuccin-theme.el b/catppuccin-theme.el
+index e79e96f..327507c 100644
+--- a/catppuccin-theme.el
++++ b/catppuccin-theme.el
+@@ -413,6 +413,7 @@ FLAVOR defaults to the value of `catppuccin-flavor'."
+          (font-lock-number-face :foreground ,ctp-peach)
+          (font-lock-operator-face :foreground ,ctp-sky)
+          (font-lock-preprocessor-face :foreground ,ctp-yellow)
++         (font-lock-property-name-face :foreground ,ctp-blue)
+          (font-lock-reference-face :inherit font-lock-constant-face) ; obsolete
+          (font-lock-regexp-grouping-backslash :foreground ,ctp-red)
+          (font-lock-regexp-grouping-construct :foreground ,ctp-red)
+-- 
+2.47.1
+
+
+From 893981bb3d7aff4c6e41427e92dc514164fdfb59 Mon Sep 17 00:00:00 2001
+From: Gabriel Santos <172639817+gs-101@users.noreply.github.com>
+Date: Wed, 11 Dec 2024 03:22:18 +0000
+Subject: [PATCH 2/2] feat: style flymake faces
+
+Closes #206
+---
+ catppuccin-theme.el | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/catppuccin-theme.el b/catppuccin-theme.el
+index 327507c..f81c8cf 100644
+--- a/catppuccin-theme.el
++++ b/catppuccin-theme.el
+@@ -699,6 +699,11 @@ FLAVOR defaults to the value of `catppuccin-flavor'."
+          (enh-ruby-regexp-delimiter-face :foreground ,ctp-yellow)
+          (enh-ruby-string-delimiter-face :foreground ,ctp-yellow)
+ 
++         ;; flymake
++         (flymake-error :underline (:style wave :color ,ctp-red))
++         (flymake-note :underline (:style wave :color ,ctp-green))
++         (flymake-warning :underline (:style wave :color ,ctp-yellow))
++
+          ;; flyspell
+          (flyspell-duplicate :underline (:style wave :color ,ctp-teal))
+          (flyspell-incorrect :underline (:style wave :color ,ctp-maroon))
+-- 
+2.47.1
+
